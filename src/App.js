@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from '../src/Components/Header';
+import HeroSection from './Components/Hero';
+import CollectionSection from './Components/Collection';
+import ProductSection from './Components/Product';
+import CtaSection from './Components/Cta';
+import SpecialSection from './Components/Special';
+import Service from './Components/Service';
+import SocialMedia from './Components/Social-Media';
+import Footer from './Components/Footer';
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  // Function to handle adding a product to the cart
+  const handleAddToCart = (productName, price) => {
+    // Create a new item object
+    const newItem = {
+      name: productName,
+      price: price
+    };
+
+    // Update the cart state with the new item
+    setCart([...cart, newItem]);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Header cart={cart}></Header>
+    <HeroSection></HeroSection>
+    <CollectionSection></CollectionSection>
+    <ProductSection handleAddToCart={handleAddToCart} />
+
+    <CtaSection></CtaSection>
+    <SpecialSection></SpecialSection>
+    <Service></Service>
+    <SocialMedia></SocialMedia>
+    <Footer></Footer>
+
     </div>
   );
 }
