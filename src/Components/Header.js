@@ -25,9 +25,28 @@ const Header = ({ cart }) => {
 
         <nav className="navbar">
           <ul className="navbar-list">
-            {/* Navbar items */}
-          </ul>
-
+          <li class="navbar-item">
+            <a className="navbar-link">Home</a>
+          </li>
+          <li class="navbar-item">
+            <a className="navbar-link">
+About</a>
+          </li>
+          <li class="navbar-item">
+            <a className="navbar-link">Products</a>
+          </li>
+          <li class="navbar-item">
+            <a className="navbar-link">
+Shop</a>
+          </li>
+          <li class="navbar-item">
+            <a className="navbar-link">Blog</a>
+          </li>
+          <li class="navbar-item">
+            <a className="navbar-link">Contact</a>
+          </li>
+        
+             </ul>
           <ul className="nav-action-list">
             <li>
               <button className="nav-action-btn">
